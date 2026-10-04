@@ -1,0 +1,23 @@
+{
+  "name": "dac",
+  "version": "0.1.0",
+  "description": "Domain Availability Check: a multi-source domain availability checker (RDAP + WHOIS + DNS + registrar APIs)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun run src/cli.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "build": "bun run scripts/build.ts",
+    "build:standalone": "bun run scripts/build.ts standalone",
+    "build:lite": "bun run scripts/build.ts lite",
+    "build:linux-x64": "bun build --compile --minify --target=bun-linux-x64 src/cli.ts --outfile dist/dac-linux-x64",
+    "build:linux-arm64": "bun build --compile --minify --target=bun-linux-arm64 src/cli.ts --outfile dist/dac-linux-arm64",
+    "build:macos-arm64": "bun build --compile --minify --target=bun-darwin-arm64 src/cli.ts --outfile dist/dac-macos-arm64",
+    "build:windows-x64": "bun build --compile --minify --target=bun-windows-x64 src/cli.ts --outfile dist/dac-windows-x64.exe"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.6.0"
+  }
+}
